@@ -76,6 +76,43 @@ Contribution (3)
 - hybrid method의 장점
   - Pose-CNN or DDVO를 하나씩만 training하는 것과 비교하여 나은 성능을 제공한다는 것.
   - Gordard꺼 보다, 나은 결과에 도달함. (which is the state of the art method trained with calibrated binocular pairs on KITTI dataset)
+  
+### 2. Learning depth estimation from videos
+
+### 2.1. Scale ambiguity
+
+### 2.2. Modeling pose predictor
+
+### 3. Differentiable direct visual odometry
+
+### 3.1. Direct visual odometry
+
+### 3.2. Differientiable implementation
+
+### 4. Training loss
+
+### 5. Experiments
+
+### 5.1. Training configurations
+
+### 5.2. Results on KITTI
+
+### 5.3. Results on Make3D
+
+### 6. Discussion
+
+> We have found that, as in monocular SLAM algorithms [10], scale ambiguity has to be taken into account when training with monocular videos. As shown in Fig. 3 this was a missing point in previous approaches training from monocular videos. Additionally, we have shown that Direct Visual Odometry can be used to estimate the relative camera pose between frames instead of learning a predictor with a CNN (Pose-CNN). This strategy needs less parameters to learn and potentially less images to train. We plan to investigate the number of images needed in the future. Finally, we have found that DDVO and Pose-CNN pose prediction modules can be improved with a hybrid architecture of Pose-CNN initialization and DDVO pose refinement giving the best results.
+The current major bottleneck for our approach is that we’re not modeling the non-rigidity of the world. As shown in Fig. 6, our current method does not perform well for articulated objects like bikers and pedestrians. Possible future work for this is to incorporate techniques from non-rigid SfM e.g. [18] to the pipeline.
+
+- monocular SLAM 알고리즘 에서, scale ambiguity 는 monocular video로 training을 할 때 고려되어져 왔다.
+- 근데 Fig 3에서 보는 것과 같이, 이건 잘못된 관점이다.
+- 추가로, 우리는 DVO가 Pose-CNN 대신에 the relative camera pose between frames가 사용되어질 수 있다고 보였다.
+- 이런 전략은 학습 시키는 데에 보다 적은 매개변수들을 필요로 하며, 훈련하는 데에도 더 적은 이미지를 필요로 한다.
+- 결과적으로, DDVO와 Pose-CNN의 pose predction modules은 향상되어질 수 있다, Pose-CNN의 hybrid architecture와 DDVO pose refinement로.
+- 우리 접근의 가장 큰 애로사항은 세상의 non-rigidity를 모델링하지 않고 있다는 것이다. 
+- Fig 6.에서 보여지듯, 우리의 현재 방법은 자전거를 타는 사람이나 보행자처럼, articulated objects에서는 잘 작동하지 않는다. 
+- 앞으로 작업해야 할만한 일은, incorporating techniques from non-rigid SfM e.g. to the pipeline.
+
 
 ## 필요한 배경 지식
 - convolution 연산에 관한 깊은 이해
