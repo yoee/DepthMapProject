@@ -30,23 +30,29 @@
 
 ------------
 
-## Stereo vs Monocular
+## ? Stereo vs Monocular
 
 ### Stereo
 
-이거 두개 참고해서 쓰기 !
-
-https://avisingh599.github.io/vision/visual-odometry-full/
-
-https://darkpgmr.tistory.com/137
+- two cameras
+- ? exact trajectory를 알 수 있다. (실측 단위)
+  - ex) x meters, y meters 이동했네~
+- ? stereo VO is usually much more robust (due to more data being available)
 
 ### Monocular
 
-
+- single camera
+- ? estimated trajectory를 알 수 있다. (scale factor에 기반)
+  - ex) x units, y units 이동했네 ~
+- ? But, in cases where the distance of the objects from the camera are too high (as compared to the distance between to the two cameras of the stereo system), the stereo case degenerates to the monocular case. 
 
 ### 참고 자료
 
 [Visual Odmetry from scratch - A tutorial for beginners](https://avisingh599.github.io/vision/visual-odometry-full/)
+
+[Scale Space와 이미지 피라미드(image pyramid)](https://darkpgmr.tistory.com/137)](https://darkpgmr.tistory.com/137)
+
+
 
 --------
 
